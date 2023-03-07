@@ -1,0 +1,254 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const Notifications());
+}
+
+class Notifications extends StatelessWidget {
+  const Notifications({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          leading: BackButton(
+            onPressed: () {},
+          ),
+          title: const Text(
+            'Notification',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 12,
+            ),
+          ),
+          backgroundColor: Colors.blueGrey.shade100,
+        ),
+        
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Center(
+              child: Column(
+                children: const <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'Chat Notifications',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'Call Notifications',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'Missed Chat Reminders',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'Missed Call Reminders',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+                  Divider(),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'In-App Notifications',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'Tips & Tricks',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'Chat Banner Notification',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'In-App Sounds',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'App Updates',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'Subscription Status',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+
+                  SizedBox(height: 5),
+
+                  Padding(
+                    padding: EdgeInsets.all(10),
+                    child: ListTile(
+                      leading: Text(
+                        'Payment Status',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                        ),
+                      ),
+                      trailing: SwitchButton(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SwitchButton extends StatefulWidget {
+  const SwitchButton({super.key});
+  
+  final int current = 0;
+
+  @override
+  State<SwitchButton> createState() => _SwitchButton();
+}
+
+class _SwitchButton extends State<SwitchButton> {
+  
+  bool selected = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Switch(
+        value: selected,
+        activeColor: Colors.blueAccent,
+        onChanged: (bool value) {
+          setState(() {
+            selected = value;
+          });
+        }),
+      );
+  }
+}
